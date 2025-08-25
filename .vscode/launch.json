@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Student Mark System",
+      "request": "launch",
+      "mainClass": "com.example.sms.MainApp",
+      "vmArgs": "--add-modules javafx.controls,javafx.fxml"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sms.MainController">
+    <top>
+        <ToolBar>
+            <Button fx:id="exportPdfBtn" text="Export PDF" onAction="#exportToPDF"/>
+            <Label fx:id="selectionHelp" style="-fx-padding: 0 0 0 16;"/>
+        </ToolBar>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.5">
+            <!-- Left: Table -->
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="Student Marks Table" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <TableView fx:id="tableView" prefHeight="400.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="nameCol" text="Name" prefWidth="140.0"/>
+                        <TableColumn fx:id="c1" text="English" prefWidth="80.0"/>
+                        <TableColumn fx:id="c2" text="Maths" prefWidth="80.0"/>
+                        <TableColumn fx:id="c3" text="Science" prefWidth="80.0"/>
+                        <TableColumn fx:id="c4" text="History" prefWidth="80.0"/>
+                        <TableColumn fx:id="c5" text="Geography" prefWidth="90.0"/>
+                        <TableColumn fx:id="c6" text="Computer" prefWidth="90.0"/>
+                        <TableColumn fx:id="c7" text="Physics" prefWidth="80.0"/>
+                        <TableColumn fx:id="c8" text="Chemistry" prefWidth="90.0"/>
+                        <TableColumn fx:id="c9" text="Biology" prefWidth="80.0"/>
+                        <TableColumn fx:id="c10" text="Arts" prefWidth="80.0"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+                <Label text="(Select multiple students with Ctrl/Shift)"/>
+            </VBox>
+
+            <!-- Right: Graph -->
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="Graph: Subject (X) vs Marks (Y) for Selected Students" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <BarChart fx:id="barChart" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <CategoryAxis fx:id="xAxis" label="Subject"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="yAxis" label="Marks" autoRanging="true"/>
+                    </yAxis>
+                </BarChart>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>
